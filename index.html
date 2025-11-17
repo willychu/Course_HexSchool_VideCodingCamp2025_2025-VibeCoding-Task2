@@ -287,23 +287,51 @@
       background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.4), rgba(15, 23, 42, 0.96));
     }
 
-    .about-body {
+    .about-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .about-text {
       font-size: 0.94rem;
       color: #d1d5db;
     }
 
-    .about-body p {
+    .about-text p {
       margin: 0 0 0.9rem;
     }
 
-    .about-note {
-      margin-top: 0.75rem;
-      padding: 0.75rem 0.85rem;
-      border-radius: 0.75rem;
-      background-color: rgba(15, 23, 42, 0.95);
-      border: 1px dashed rgba(148, 163, 184, 0.7);
-      font-size: 0.85rem;
+    .about-list {
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .about-list-item {
+      list-style: disc;
+      margin-bottom: 0.35rem;
+    }
+
+    .about-list-item strong {
+      color: #a5b4fc;
+    }
+
+    .about-media {
+      max-width: 22rem;
+      margin: 0 auto;
+    }
+
+    .about-figure {
+      margin: 0;
+    }
+
+    .about-caption {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
       color: #9ca3af;
+      text-align: center;
     }
 
     /* CSS:ABOUT-END */
@@ -512,6 +540,21 @@
       .project-card {
         padding: 1.1rem 1.2rem;
       }
+
+      .about-layout {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .about-text {
+        flex: 3;
+      }
+
+      .about-media {
+        flex: 2.2;
+        max-width: none;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -587,24 +630,47 @@
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
           <div class="section-header">
-            <h2 id="about-heading" class="section-title">關於我（About 區占位內容）</h2>
-            <p class="section-subtitle">這裡將介紹你的背景與故事，現在先放上結構與說明文字。</p>
+            <h2 id="about-heading" class="section-title">關於我</h2>
+            <p class="section-subtitle">前端開發、教學與合作的穩定夥伴。</p>
           </div>
-          <div class="about-body">
-            <p>
-              這裡目前是 <strong>About 區的占位內容</strong>。未來會用「Section SDD」 的 Prompt
-              產生更完整的關於我區塊，例如個人簡介、職涯歷程、價值觀、擅長領域等，並可能搭配更豐富的版面設計。
-            </p>
-            <p>
-              當你準備好正式文案與版型時，可以透過新的 Prompt 產生一整段
-              <code>&lt;section id="about" ...&gt;...&lt;/section&gt;</code> 程式碼，
-              再貼回本檔案中，直接取代現在的 About 區占位內容。
-            </p>
-            <div class="about-note">
-              提示給開發者：之後會用 Section SDD 的 Prompt 產生新的 About section。
-              請將產生出的 <strong>整段 section 程式碼</strong>，完整貼在
-              <strong>SECTION:ABOUT-START / SECTION:ABOUT-END</strong> 這兩個註解中間，
-              完全覆蓋目前這一區，不需要手動逐行修改。
+          <div class="about-layout">
+            <div class="about-text">
+              <p>
+                目前專注在 <strong>前端開發</strong>、<strong>教學</strong> 與少量 <strong>接案合作</strong>。常用技術包含
+                HTML / CSS、現代 JavaScript、主流前端框架與 RWD 版型規劃，也熟悉設計交付、版本控制與基本的效能優化，
+                幫你把抽象的想法整理成可落地的介面與互動。
+              </p>
+              <p>
+                過去有多段跨團隊協作與教學經驗，所以我特別重視 <strong>溝通與說明</strong>。
+                喜歡把複雜需求拆解成好理解的步驟，過程中會主動確認共識、給出選項與風險提醒，
+                讓專案在「看得懂、跟得上」的前提下穩定往前推。
+              </p>
+              <ul class="about-list" aria-label="我可以幫上忙的地方">
+                <li class="about-list-item">
+                  <strong>前端畫面實作與調整：</strong>
+                  從設計稿切版、互動細節到跨裝置 RWD，協助你把 UI 確實變成可靠的前端程式碼。
+                </li>
+                <li class="about-list-item">
+                  <strong>技術與流程一起梳理：</strong>
+                  如果你還在摸索技術選項或開發流程，我可以一起討論架構、拆任務，找出適合團隊的做法。
+                </li>
+                <li class="about-list-item">
+                  <strong>教學與知識整理：</strong>
+                  針對想學前端的成員或學員，提供條理清楚的說明、實作練習與回饋，幫助穩定累積實力。
+                </li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#projects">查看作品集</a>
+                <a class="btn btn-ghost" href="#contact">聯絡我</a>
+              </div>
+            </div>
+            <div class="about-media">
+              <figure class="about-figure">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1000&q=80" alt="專注在螢幕前撰寫程式碼的工程師示意照片" loading="lazy">
+                <figcaption class="about-caption">
+                  日常多半待在程式碼與設計稿之間，將想法轉成實際可操作的介面與體驗。
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
